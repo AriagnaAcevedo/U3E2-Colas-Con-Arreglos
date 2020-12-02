@@ -1,0 +1,39 @@
+package Clases;
+public class Metodos 
+{
+    String[] Cola = new String [5];
+    int Cont=0;
+    
+    public void Insertar(String Dato)
+    {
+        Cola [Cont] = Dato;
+        Cont++;
+    }
+    
+    public void Eliminar()
+    {
+        if (Cont==0)
+        {
+            System.out.println("Arreglo vacio");
+        }
+        else
+        {
+            System.out.println("El elemento: " + Cola[0] + " ha sido eliminado");
+            Cola [0] = null;
+            Cola [4] = null;
+            Cont--;
+            for (int i=0; i<4; i++)
+            {
+                Cola [i] = Cola[i+1];
+            }
+        }
+    }
+    
+    public void Mostrar()
+    {
+        for (int i=0; i<5; i++)
+        {
+            System.out.println(Cola[i]);
+        }
+    }
+}
